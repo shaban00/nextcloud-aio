@@ -1,6 +1,6 @@
 FROM golang:1.21.3-alpine3.18 as go
 
-ENV IMAGINARY_HASH b632dae8cc321452c3f85bcae79c580b1ae1ed84
+ENV IMAGINARY_HASH 8f36a26c448be8c151a3878404b75fcd1cd3cf0c
 
 RUN set -ex; \
     apk add --no-cache \
