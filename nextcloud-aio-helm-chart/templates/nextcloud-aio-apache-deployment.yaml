@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert -c -f latest.yml --namespace {{ .Values.NAMESPACE }}
-    kompose.version: 1.31.2 (a92241f79)
+    kompose.version: 1.34.0 (cbf2835db)
   labels:
     io.kompose.service: nextcloud-aio-apache
   name: nextcloud-aio-apache
@@ -17,9 +17,8 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert -c -f latest.yml --namespace {{ .Values.NAMESPACE }}
-        kompose.version: 1.31.2 (a92241f79)
+        kompose.version: 1.34.0 (cbf2835db)
       labels:
-        io.kompose.network/nextcloud-aio: "true"
         io.kompose.service: nextcloud-aio-apache
     spec:
       initContainers:
@@ -57,7 +56,7 @@ spec:
               value: nextcloud-aio-talk
             - name: TZ
               value: "{{ .Values.TIMEZONE }}"
-          image: nextcloud/aio-apache:20231016_081107-latest
+          image: nextcloud/aio-apache:20241017_085101-latest
           name: nextcloud-aio-apache
           ports:
             - containerPort: {{ .Values.APACHE_PORT }}
